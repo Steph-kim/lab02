@@ -25,13 +25,16 @@ fib_dict = {
 # Do not print it from this function
 def fib_sequence(num):
 	
-	# TODO fill in this part
-
+	if num < 0:
+		return "Invalid input"
+	if num in fib_dict:
+		return fib_dict[num]
+		
+	fib_dict[num] = fib_sequence(num - 1) + fib_sequence(num - 2)
 	return fib_dict[num]
-
 
 if __name__ == '__main__':
 	number = int(input("Enter the number:\n"))
-	print(f'The number in position {number} is: ')
+	print(f"The number in position {number} is: ")
 	print(fib_sequence(number))
  
