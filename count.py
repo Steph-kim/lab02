@@ -1,13 +1,31 @@
 
 
 def count_char(text):
-    # TODO count the number of times each character occurs in the text
-    # and print out each character along with its count
-    pass
+        
+    counts = {}
+    for character in text: 
+        if character not in counts:
+            counts[character] = 1
+        else: 
+            counts[character] += 1
+
+    for c, count in counts.items():
+        print(c,count)
 
 def count_char_insensitive(text):
-    # TODO do the same as `count_char` but in a case-insensitive manner
-    pass
+    
+    counts = {}
+    for character in text:
+    
+        if character.isalpha():
+            character = character.lower()
+        if character not in counts:
+            counts[character] = 1
+        else:
+            counts[character] += 1
+
+    for char, count in counts.items():
+        print(char, count)
 
 
 def count_char_ordered(text):
